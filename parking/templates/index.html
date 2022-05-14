@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/B553881/Parking'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'q6hOrIt1rP4rcR/yz6vYxwaIPvj5QqJfDluLk+qmryiW9NmC6Q5tsW7Ymh2FJ0MZpFVgf8732NKCptcbVIaEMQ=='; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+        queryParams += '&' + encodeURIComponent('format') + '=' + encodeURIComponent('2'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
+            }
+        };
+
+        xhr.send('성공');
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
